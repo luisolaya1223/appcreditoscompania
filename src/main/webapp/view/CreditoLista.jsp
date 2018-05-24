@@ -30,13 +30,9 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/usuarios.jsp">
-                            Usuarios<span class="sr-only">(current)</span>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/creditos.jsp">
+                            Creditos<span class="sr-only">(current)</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/cursos.jsp">
-                            Cursos</a>
                     </li>
                 </ul>
             </div>
@@ -48,27 +44,30 @@
             <div class="jumbotron">
                 <div class="container">
                         <table class="table">
-                        <caption>Lista de Usuarios</caption>
+                        <caption>Lista de Creditos</caption>
                         <thead>
                             <tr>
+                                <th scope="col">Numero Crédito</th>
                                 <th scope="col">Documento</th>
                                 <th scope="col">Nombres</th>
                                 <th scope="col">Apellidos</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Rol</th>
-                                <th scope="col">...</th>
+                                <th scope="col">Monto</th>
+                                <th scope="col">Tipo Trabajador</th>
+                                <th scope="col">Tipo Credito</th>
+                                <th scope="col">Trabaja en la empresa</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="usuario" items="${sessionScope.LISTADO}">
+                            <c:forEach var="credito" items="${sessionScope.LISTADO}">
                                 <tr>
-                                    <td><c:out value="${usuario.getDocumento()}"/></td>
-                                    <td><c:out value="${usuario.getNombres()}"/></td>
-                                    <td><c:out value="${usuario.getApellidos()}"/></td>
-                                    <td><c:out value="${usuario.getEmail()}"/></td>
-                                    <td><c:out value="${usuario.getEstado()}"/></td>
-                                    <td><c:out value="${usuario.getRol()}"/></td>
+                                    <td><c:out value="${credito.getNumeroCredito ()}"/></td>
+                                    <td><c:out value="${credito.getDocumento()}"/></td>
+                                    <td><c:out value="${credito.getNombres()}"/></td>
+                                    <td><c:out value="${credito.getApellidos()}"/></td>
+                                    <td><c:out value="${credito.getMonto()}"/></td>
+                                    <td><c:out value="${credito.getTipoTrabajador()}"/></td>
+                                    <td><c:out value="${credito.getTipoCredito()}"/></td>
+                                    <td><c:out value="${credito.getTrabajador()}"/></td>
                                     <td></td>                                    
                                 </tr>
                             </c:forEach>
